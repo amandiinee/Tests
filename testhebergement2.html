@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet" /> 
+    <link rel="preconnect" href="https://fonts.awesome.com" /> 
+    <script src="https://kit.fontawesome.com/9919d0fa00.js" crossorigin="anonymous"></script>
+
+    <style>
+        
+        * {
+            border: 0;
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-family: "Raleway", Arial, Helvetica, sans-serif;
+        }
+        .bordure {
+            border: solid 1px red;
+        }
+
+        .conteneur {
+            display: flex;
+            align-items: flex-start;
+            flex-direction: column-reverse; 
+        }
+        .hebergements img{
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 15px 15px 0 0;
+            
+        }
+        
+        .hebergements, .populaires {           
+            /* width: 100%; */
+            padding: 0 20px;
+        }
+
+        .hebergement, .populaire {
+            margin: 1vw 0;
+        }
+        .hebergement{
+            width: 49%;
+            height: 45%;
+            background-color: white;
+            padding: 1%;        
+            border-radius: 20px;
+            transition-duration: 200ms;
+            -webkit-box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.24); 
+            box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.24);
+        }   
+        .hebergement:hover {
+            cursor: pointer;
+            transform: scale(1.05);
+        }
+        .populaire{
+            width: 80%;
+            height: 20%;
+            background-color: white;
+            padding: 1%;
+            margin-left: 10%;
+            margin-bottom: 3px;
+            border-radius: 20px;
+            transition-duration: 200ms;
+            -webkit-box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.24); 
+            box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.24);
+            /* display: flex;
+            justify-content: center;
+            align-items: center; */
+        }   
+        .populaire:hover {
+            cursor: pointer;
+            transform: scale(1.05);
+        }
+        .populaire img {
+
+        width: 55%;
+        height: 160px;
+        object-fit: cover;
+        border-radius: 15px 0 0 15px;
+        }
+       
+        .hebergements {
+            display: flex;
+            flex: 2;
+            height: 780px;
+            width: 100%;
+            margin-right: 20px;
+            border-radius: 10px;
+            margin-left: 20px;
+            margin-top: 3%;
+            background-color: #f2f2f2;
+            flex-direction: column;
+            justify-content: space-around;
+            
+        }
+            
+        .populaires {
+            display:flex;
+            flex: 1;
+            height: 780px;
+            width: 100%;
+            margin-left: 20px;
+            border-radius: 10px;
+            margin-right: 20px ;
+            margin-top: 3%;
+            background-color: #f2f2f2;
+            flex-direction: column;
+            justify-content: space-around;
+
+        }
+
+
+        
+        .grille {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: flex-start;               
+        }
+        
+        
+        @media screen and (min-width: 800px) {
+
+            .conteneur {
+                flex-direction: row;
+            }
+
+            .hebergements {           
+                width: 70%;
+            }
+
+            .populaires {
+                width: 30%;
+            }
+
+            .hebergement {
+                width: 49%; 
+                
+
+            }
+
+        }
+
+        @media screen and (min-width: 1200px) {
+
+            .hebergements {           
+                width: 70%;
+            }
+
+            .populaires {
+                width: 30%;
+            }
+
+            .hebergement {
+                width: 31%;
+            }
+
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="conteneur bordure">
+        <section class="hebergements bordure">
+            <h2 class="bordure">Hébergements à Marseille</h2>
+            <div class="grille bordure">
+                <div class="hebergement bordure">
+                  <figure>
+                        <img src="images/hebergements/1_xlarge/marcus-loke-WQJvWU_HZFo-unsplash.jpg" alt="Photo de l'Auberge de la Cannebière" />
+                            <figcaption>
+                            <h3>Auberge de la Cannebière</h3>
+                            <p>Nuit à partir de <strong>25€</strong></p>
+                            <div>
+                                <i class="fas fa-star bleu"></i>
+                                <i class="fas fa-star bleu"></i>
+                                <i class="fas fa-star bleu"></i>
+                                <i class="fas fa-star bleu"></i>
+                                <i class="fas fa-star colorGris"></i>
+                            </div>
+                            </figcaption>
+                    </figure>
+                </div>
+                <div class="hebergement bordure">
+                  <figure>
+                        <img src="images/hebergements/1_xlarge/fred-kleber-gTbaxaVLvsg-unsplash.jpg" alt="Photo de l'Hôtel du port" />
+                            <figcaption>
+                                <h3>Hôtel du port</h3>
+                                <p>Nuit à partir de 52<strong>€</strong></p>
+                                <div>
+                                    <i class="fas fa-star bleu"></i>
+                                    <i class="fas fa-star bleu"></i>
+                                    <i class="fas fa-star bleu"></i>
+                                    <i class="fas fa-star bleu"></i>
+                                    <i class="fas fa-star bleu"></i>
+                                </div>
+                            </figcaption>
+                   </figure>     
+                </div>
+                <div class="hebergement bordure">
+                  <figure>
+                        <img src="images/hebergements/1_xlarge/reisetopia-B8WIgxA_PFU-unsplash.jpg" alt="Photo de l'Hôtel Les mouettes" />
+                            <figcaption>
+                                <h3>Hôtel Les mouettes</h3>
+                                <p>Nuit à partir de 76<strong>€</strong></p>
+                                <div>
+                                    <i class="fas fa-star bleu"></i>
+                                    <i class="fas fa-star bleu"></i>
+                                    <i class="fas fa-star bleu"></i>
+                                    <i class="fas fa-star bleu"></i>
+                                    <i class="fas fa-star colorGris"></i>
+                                </div>
+                            </figcaption>
+                  </figure>
+                </div>
+                <div class="hebergement bordure"> 
+                    <figure>
+                        <img src="images/hebergements/1_xlarge/annie-spratt-Eg1qcIitAuA-unsplash.jpg" alt="Photo de l'Hôtel de la mer" />
+                            <figcaption>
+                                <h3>Hôtel de la mer</h3>
+                                <p>Nuit à partir de 46<strong>€</strong></p>
+                                <div>
+                                    <i class="fas fa-star bleu"></i>
+                                    <i class="fas fa-star bleu"></i>
+                                    <i class="fas fa-star bleu"></i>
+                                    <i class="fas fa-star colorGris"></i>
+                                    <i class="fas fa-star colorGris"></i>
+                                </div>
+                            </figcaption>
+                    </figure>            
+                </div>
+                <div class="hebergement bordure">   
+                    <figure>
+                        <img src="images/hebergements/1_xlarge/nicate-lee-kT-ZyaiwBe0-unsplash.jpg" alt="Photo de l'Auberge Le Panier" />
+                            <figcaption>
+                                <h3>Auberge Le Panier</h3>
+                                <p>Nuit à partir de <strong>23€</strong></p>
+                                <div>
+                                    <i class="fas fa-star bleu"></i>
+                                    <i class="fas fa-star bleu"></i>
+                                    <i class="fas fa-star bleu"></i>
+                                    <i class="fas fa-star bleu"></i>
+                                    <i class="fas fa-star colorGris"></i>
+                                </div>
+                            </figcaption>
+                    </figure>            
+                </div>
+                <div class="hebergement bordure">
+                    <figure>
+                        <img src="images/hebergements/1_xlarge/febrian-zakaria-M6S1WvfW68A-unsplash.jpg" alt="Photo de l'Hôtel chez Amina" />
+                            <figcaption>
+                                <h3>Hôtel chez Amina</h3>
+                                <p>Nuit à partir de 96<strong>€</strong></p>
+                                <div>
+                                    <i class="fas fa-star bleu"></i>
+                                    <i class="fas fa-star bleu"></i>
+                                    <i class="fas fa-star bleu"></i>
+                                    <i class="fas fa-star bleu"></i>
+                                    <i class="fas fa-star bleu"></i>
+                                </div>
+                            </figcaption>    
+                    </figure>        
+                </div>
+            </div>
+        </section>
+        <aside class="populaires bordure">
+            <h2 class="bordure">Les plus populaires</h2>
+            <div class="grille bordure">
+                <div class="populaire bordure">
+                    <figure>
+                        <img src="images/hebergements/1_xlarge/emile-guillemot-Bj_rcSC5XfE-unsplash.jpg" alt="Photo de l'Hôtel Le soleil du matin" />
+                            <figcaption>
+                                <h3>Hôtel Le soleil du matin</h3>
+                                <p>Nuit à partir de 128<strong>€</strong></p>
+                                <div>
+                                <i class="fas fa-star bleu"></i>
+                                <i class="fas fa-star bleu"></i>
+                                <i class="fas fa-star bleu"></i>
+                                <i class="fas fa-star bleu"></i>
+                                <i class="fas fa-star bleu"></i>
+                                </div>
+                            </figcaption>    
+                    </figure>        
+                </div>
+                <div class="populaire bordure">  
+                    <figure>
+                        <img src="images/hebergements/1_xlarge/aw-creative-VGs8z60yT2c-unsplash.jpg" alt="Photo de Chambres d'hôtes Au coeur de l'eau" />
+                            <figcaption>
+                                <h3>Au coeur de l'eau Chambres d'hôtes</h3>
+                                <p>Nuit à partir de 71<strong>€</strong></p>
+                                <div>
+                                <i class="fas fa-star bleu"></i>
+                                <i class="fas fa-star bleu"></i>
+                                <i class="fas fa-star bleu"></i>
+                                <i class="fas fa-star bleu"></i>
+                                <i class="fas fa-star colorGris"></i>
+                                </div>
+                            </figcaption>    
+                    </figure>        
+                </div>
+                <div class="populaire bordure">  
+                    <figure>
+                        <img src="images/hebergements/1_xlarge/febrian-zakaria-sjvU0THccQA-unsplash.jpg" alt="Photo de l'Hôtel Tout bleu et Blanc" />
+                        <figcaption>
+                            <h3>Hôtel Tout bleu et Blanc</h3>
+                            <p>Nuit à partir de 68<strong>€</strong></p>
+                            <div>
+                            <i class="fas fa-star bleu"></i>
+                            <i class="fas fa-star bleu"></i>
+                            <i class="fas fa-star bleu"></i>
+                            <i class="fas fa-star bleu"></i>
+                            <i class="fas fa-star colorGris"></i>
+                            </div>
+                        </figcaption>
+                    </figure>        
+                </div>
+            </div>
+        </aside>
+    </div>
+</body>
+</html>

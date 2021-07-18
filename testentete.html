@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        
+        * {
+            padding: 0;
+            margin: 0;
+            border: none;
+            box-sizing: border-box;
+        }
+        
+        .bordure {
+            border: solid 1px red;
+        }
+
+        
+        nav ul {
+            
+            display: flex;
+            list-style-type: none;
+        }
+        nav ul li {
+            width: 50%;
+        }
+        .inscription {
+            display: block;
+            float: right;
+        }
+
+        /* Mise en page pour les tablettes (à partir de 800px) 
+        Principe du mobile first */
+        @media screen and (min-width: 800px) {
+            .page {
+                width: 800px;
+                margin: 0 auto;
+            }
+            header {
+                display: flex;
+            }
+            
+            /* Largeur des éléments de menu selon la maquette, mesuré sous Photoshop */
+            nav ul li {
+                width: 162px;
+            }
+
+            /* Le lien inscription passe à droite dans flex */
+            .inscription {
+                order: 3;
+            }
+
+            /* Permet d'affecter tout l'espace restant au logo, ce qui va repousser le menu à droite
+            Cette propriété est à étudier et à comprendre en détail, c'est elle qui donne la solution au problème */
+            .logo {
+                flex-grow: 1;
+            }
+
+        }
+
+        /* Mise en page pour les écrans (à partir de 1200px) 
+        Principe du mobile first */       
+        @media screen and (min-width: 1200px) {
+            .page {
+                width: 1200px;
+            }
+        }   
+        
+    </style>
+</head>
+<body>
+    <!-- Bloc qui contient toute la page, pour limiter la largeur en prévision des écrans extrêmement larges -->
+    <div class="page bordure">
+            <!-- Header -->
+        <header class="bordure">
+            
+            <!-- Lien S'inscrire -->
+            <a class="inscription bordure" href="#">S'inscrire</a>
+            
+                
+            <!--Logo-->
+            <div class="logo bordure"></div>
+            <a href="#" id="logo"><img src="images/logo/reservia.svg" alt="Logo de Reservia"></a>        
+
+                
+                <!--Menus / ancres hebergements et activités-->
+                <nav class="bordure">
+                    <ul class="bordure">
+                        <li class="bordure"><a class="active" href="#hebergements">Hébergements</a></li>
+                        <li class="bordure"><a href="#activites">Activités</a></li>
+                    </ul>    
+         
+                </nav>
+
+        </header> 
+
+    </div> 
+</body>
+</html>
