@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <!-- Google font Raleway -->
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet" /> 
+    
+    <!-- Fontawesome icones -->
+    <link rel="preconnect" href="https://fonts.awesome.com" /> 
+    <script src="https://kit.fontawesome.com/9919d0fa00.js" crossorigin="anonymous"></script>
+    
+    <!-- <link rel="stylesheet" href="style.css" /> -->
+
+    <style>
+        /* Couleurs
+        Gris clair : #f2f2f2;
+        Bleu #0065fc
+         */
+        /* "reset", pour réinitialiser les marges, paddings, borders */
+        * {
+            padding: 0;
+            margin: 0;
+            border: none;
+            /* force le navigateur à inclure les paddings et borders dans la dimension des boîtes */
+            box-sizing: border-box;
+        }
+        /* classe utilitaire pour visualiser les éléments */
+        .bordure {
+            border: solid 1px red;
+        }
+        body{
+            font-family: 'Raleway', sans-serif;
+        }
+        a {
+            text-decoration: none;
+            color:black;
+        }
+        /* ----------------- Mise en page pour les smartphones !!!
+        Principe du mobile first ------------------------------*/
+        nav ul {
+            /* Pour gérer les 2 éléments du menu */
+            display: flex;
+            /* Suppression des puces */
+            list-style-type: none;
+            margin-top: 10px;
+        }
+        nav ul li {
+            /* Dans la maquette mobile, les 2 éléments du menu se répartissent équitablement la largeur */
+            width: 50%;
+        }
+        nav ul li a{
+            display:block;
+            text-align:center;
+            padding:0 0 15px 0;
+            border-bottom: 3px solid #f2f2f2;
+        }
+        nav ul li a:hover{
+            border-bottom-color: #0065fc;
+            color: #0065fc;
+        }
+        .inscription {
+            display: block;
+            float: right;
+            padding-top:44px;
+            color: #0065fc;
+            font-weight:bold;
+        }
+        .logo{
+            padding-top:30px;
+        }
+
+        .rechercher {
+           
+            /* width: 400px;
+            border-radius: 10px;
+            border: 0.5px solid #f2f2f2; */
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }     
+        .rechercher i{
+            height: 50px;
+            width: 50px;
+            border-radius: 10px 0 0 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f2f2f2;
+            }
+            .rechercher input {
+            height: 50px;
+            width: 230px;
+            font-family:'Raleway', sans-serif;
+            font-size: 17px;
+            color: black;
+            font-weight: bold;
+            padding-left: 20px;
+            border-top: solid 1px #f2f2f2; 
+            border-bottom: solid 1px #f2f2f2; 
+            }
+        /* .bordrecherche {    
+            margin-left: 50px;
+            margin-top: 30px;
+            width: 400px;
+            border-radius: 10px;
+            border: 0.5px solid #f2f2f2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            }
+            .recherche {
+            height: 50px;
+            width: 230px;
+            font-size: 17px;
+            color: black;
+            font-weight: bold;
+            padding-left: 20px;
+            border: none;  
+            } */
+            
+            
+            /*en smartphone logo recherche a la place de rechercher */ 
+            .buttonSearch {
+            height: 50px;
+            width: 120px;
+            color: white;
+            cursor: pointer;
+            border-radius: 0 10px 10px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #0065fc;
+            
+            }
+            .buttonSearch:hover {
+            color: #0065fc;
+            background-color: #f2f2f2;
+            font-weight: bold;
+            }
+            .titre p{
+                margin-top:10px;
+            }
+        
+        /* .filtres {
+            display: flex;
+            align-items: center;
+            margin-top: 50px;
+            margin-bottom: 4px; 
+        } */
+        /* .filtres h3 {
+        margin-left: 20px;
+        margin-bottom: 10px;
+        } */
+        /* .filtreTexteIcone { 
+        border: 2px solid #f2f2f2;
+        height: 50px;
+        border-radius: 30px;
+        margin-right: 20px;
+        margin-bottom:15px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        } */
+
+        .filtreTexteIcone:hover > .filtreTexte {
+        color: #0065fc;
+        }
+        .filtreTexteIcone:hover > .filtreIcone {
+        color: white;
+        background-color: #0065fc;
+        }
+      
+
+        /* .filtreIcone {
+        margin-left: -2px;
+        border-radius: 25px;
+        width: 52px;
+        height: 52px;
+        color: #0065fc;
+        background-color: #deebff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        } */
+        /* .flexSpaceAround {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        } */
+        .filtreTexte { /*flex*/
+        height: 50px;
+        padding-left: 20px;
+        padding-right: 20px;
+        border-radius: 0 25px 25px 0;
+        font-weight: bold;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        }
+        .filtress i{
+        margin-left: -2px;
+        border-radius: 25px;
+        width: 52px;
+        height: 52px;
+        color: #0065fc;
+        background-color: #deebff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        }
+        .filtress {
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 50px;
+            margin-bottom: 4px; 
+        }
+        .bordurefiltre{ /*flex*/
+        border: 2px solid #f2f2f2;
+        height: 50px;
+        border-radius: 30px;
+        margin-right: 20px;
+        margin-bottom:15px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        }
+
+        /* .filtreTexteIcone { 
+        border: 2px solid #f2f2f2;
+        height: 50px;
+        border-radius: 30px;
+        margin-right: 20px;
+        margin-bottom:15px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        } */
+
+        /* .Column {
+            flex-direction: column;
+            align-items: flex-start;
+            
+        } */
+        .info {
+        display: flex;
+        align-items: center;
+        }
+        .info i {
+            color: #0065fc;
+        }
+        .icone {
+        width: 20px;
+        height: 20px;
+        border: 2px solid #f2f2f2;
+        border-radius: 25px;
+        margin-right: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        }
+
+        /* Mise en page pour les tablettes (à partir de 800px) 
+        Principe du mobile first */
+        @media screen and (min-width: 800px) {
+            .page {
+                width: 800px;
+                margin: 0 auto;
+            }
+            header {
+                display: flex;
+            }
+            nav ul{
+                margin-top: 0;
+            }
+            /* Largeur des éléments de menu selon la maquette, mesuré sous Photoshop */
+            nav ul li {
+                width: 162px;
+            }
+            nav ul li a{
+                padding: 50px 0 0 0;
+                border-bottom: none;
+                border-top: 2px solid transparent;
+            }
+            
+            nav ul li a:hover{
+                /* border-top:2px solid #0065fc; */
+                border-top-color: #0065fc;
+                border-bottom: none;
+            }
+            /* Le lien inscription passe à droite dans flex */
+            .inscription {
+                order: 3;
+                padding-top:52px;
+            }
+
+            /* Permet d'affecter tout l'espace restant au logo, ce qui va repousser le menu à droite
+            Cette propriété est à étudier et à comprendre en détail, c'est elle qui donne la solution au problème */
+            .logo {
+                flex-grow: 1;
+                padding-top: 50px;
+            }
+
+        }
+
+        /* Mise en page pour les écrans (à partir de 1200px) 
+        Principe du mobile first */       
+        @media screen and (min-width: 1200px) {
+            .page {
+                width: 1200px;
+            }
+           
+        }   
+        
+    </style>
+</head>
+<body>
+
+    <!-- Bloc qui contient toute la page, pour limiter la largeur en prévision des écrans extrêmement larges -->
+    <div class="page bordure">
+
+        <!-- Header -->
+        <header class="bordure">
+
+            <!-- Lien S'inscrire -->
+            <a class="inscription bordure" href="#">S'inscrire</a>
+            
+            <!-- Logo -->
+            <div class="logo bordure">
+                <a href="#" id="logo"><img src="images/logo/reservia.svg" alt="Logo de Reservia"></a>
+            </div>               
+            
+            <!-- Menu -->
+            <nav class="bordure">
+                <ul class="bordure">
+                    <li><a href="#">Hébergements</a></li>
+                    <li><a href="#">Activités</a></li>
+                </ul>
+            </nav>  
+        
+        </header>
+
+        <!-- Titre et sous-titre-->
+        <div class="titre bordure">    
+            <h1 class="bordure">Trouvez votre hébergement pour des vacances de rêve</h1>
+            <p class="bordure">En plein centre ville ou en pleine nature</p>
+        </div>
+        <!-- essayer de deplacer cette div dans le header -->
+        
+        <!--Section 1 Recherche-->
+        <!--Barre de recherche--> 
+        <section class="rechercher bordure">
+            <i class="fas fa-map-marker-alt"></i> 
+            <input type="search" value="Marseille, France"/>
+            <div class="buttonSearch">Rechercher</div>
+        </section>
+              
+
+        <section class="filtress bordure">
+            <div class="bordurefiltre"><i class="fas fa-money-bill-wave fa-lg"></i><div class="filtreTexte">Économique</div></div>   
+            <div class="bordurefiltre"><i class="fas fa-child fa-lg"></i><div class="filtreTexte">Familial</div></div>
+            <div class="bordurefiltre"><i class="fas fa-heart fa-lg"></i><div class="filtreTexte">Romantique</div></div>
+            <div class="bordurefiltre"><i class="fas fa-dog fa-lg"></i><div class="filtreTexte">Animaux autorisés</div></div>
+
+
+
+
+
+
+
+
+
+        <!-- <div class="Column filtres">
+            <h3>Filtres</h3>
+        
+            <div class="flexSpaceAround">
+                    <div class="filtreTexteIcone">
+                        <i class="fas fa-money-bill-wave fa-lg filtreIcone"></i>
+                        <div class="filtreTexte">Économique</div>
+                    </div>
+                    <div class="filtreTexteIcone">
+                        <i class="fas fa-child fa-lg filtreIcone"></i>
+                        <div class="filtreTexte">Familial</div>
+                    </div>
+            </div>
+            
+            <div class="Column flexSpaceAround">
+                    <div class="filtreTexteIcone">
+                        <i class="fas fa-heart fa-lg filtreIcone"></i>
+                        <div class="filtreTexte">Romantique</div>
+                    </div>
+                <div class="filtreTexteIcone">
+                        <i class="fas fa-dog fa-lg filtreIcone"></i>
+                        <div class="filtreTexte">Animaux autorisés</div>
+                </div>
+            </div>
+        </div> -->
+       <!-- Phrase d'info et icone-->
+         
+       <div class="info">
+            <div class="icone"> 
+            <i class="fas fa-info fa-xs"></i>
+            </div>         
+            <p>Plus de 500 logements disponibles dans cette ville</p>
+       </div>     
+    </div>    
+</body>
+</html>    
